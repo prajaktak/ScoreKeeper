@@ -6,9 +6,18 @@
 //
 
 import Foundation
-struct Player : Identifiable{
+import SwiftUICore
+
+struct Player : Identifiable, Hashable{
     var id: UUID = UUID()
     
     var name:String
     var score:Int
+    var color:Color = .random()
+}
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+           lhs.name == rhs.name && lhs.score == rhs.score
+       }
 }
