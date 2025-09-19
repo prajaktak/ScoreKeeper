@@ -6,9 +6,12 @@
 //
 
 import Foundation
-struct Player : Identifiable{
+import SwiftUICore
+
+struct Player : Identifiable, Hashable{
     var id: UUID = UUID()
     
     var name:String
     var score:Int
+    var color:Color
 }
