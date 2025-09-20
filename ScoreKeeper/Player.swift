@@ -13,5 +13,11 @@ struct Player : Identifiable, Hashable{
     
     var name:String
     var score:Int
-    var color:Color
+    var color:Color = .random()
+}
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+           lhs.name == rhs.name && lhs.score == rhs.score
+       }
 }
